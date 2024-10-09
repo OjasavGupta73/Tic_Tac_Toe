@@ -14,7 +14,9 @@ class Board {
             }
         }
     }
-
+    public boolean valid(int x,int y){
+        return board[x][y].checkWin() != 0;
+    }
     public void setXY(int x, int y, int subBoardX, int subBoardY, int val) {
         board[subBoardX][subBoardY].setXY(x, y, val);
         lastMoveX = x;

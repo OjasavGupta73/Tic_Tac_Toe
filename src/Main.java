@@ -26,12 +26,18 @@ public class Main {
             do {
                 subBoardSelectX = game.lastMoveX;
                 subBoardSelectY = game.lastMoveY;
-                if (subBoardSelectX == -1) {
+                int validity_c=0;
+                while (subBoardSelectX == -1 || game.valid(subBoardSelectX,subBoardSelectY)) {
                     System.out.println("Enter Board X:");
                     subBoardSelectX = scanner.nextInt();
                     System.out.println("Enter Board Y:");
                     subBoardSelectY = scanner.nextInt();
+                    validity_c++;
+                    if(validity_c>1) {
+                        System.out.println("WARNING:Wrong Board Chosen Try Again!!");
+                    }
                 }
+
 
                 System.out.println("Enter X Coordinate:");
                 xcor = scanner.nextInt();
@@ -42,12 +48,15 @@ public class Main {
 
             int gameState = game.checkWinAbsolute();
             if (gameState == 2) {
+                game.printBoard();
                 System.out.println("Game Drawn");
                 break;
             } else if (gameState == 1) {
+                game.printBoard();
                 System.out.println(p1 + " Wins");
                 break;
             } else if (gameState == -1) {
+                game.printBoard();
                 System.out.println(p2 + " Wins");
                 break;
             }
