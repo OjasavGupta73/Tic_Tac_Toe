@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Welcome to the Ultimate Tic Tac Toe");
         Board game = new Board();//
         Scanner scanner = new Scanner(System.in);
 
