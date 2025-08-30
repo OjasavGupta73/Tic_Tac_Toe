@@ -14,9 +14,7 @@ class SubBoard {
             }
         }
     }
-    public int randomfunction(){
-        return 0;
-    }
+
     public int checkWin() {
         boolean emptyCount = false;
 

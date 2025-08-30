@@ -14,9 +14,6 @@ class Board {
             }
         }
     }
-    public int xyz(){
-        return 1;
-    }
     public boolean valid(int x,int y){
         return board[x][y].checkWin() != 0;
     }
